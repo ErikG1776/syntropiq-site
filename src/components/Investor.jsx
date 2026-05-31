@@ -1,5 +1,6 @@
 // Investor-facing single page.
 import { useState } from 'react';
+import { useForm } from '@formspree/react';
 import { Icon } from './Icon.jsx';
 import { SectionHeader } from './primitives.jsx';
 import { useMagnetic } from './hooks.js';
@@ -427,10 +428,9 @@ function Moat() {
 
 // ─── Ask / Request information ───────────────────────────────
 function Ask() {
-  const [sent, setSent] = useState(false);
+  const [state, handleSubmit] = useForm('xgoqjwgo');
   const [form, setForm] = useState({ name: '', firm: '', email: '', note: '', call: false });
   const set = (k, v) => setForm((f) => ({ ...f, [k]: v }));
-  const submit = (e) => { e.preventDefault(); if (form.name && form.email) setSent(true); };
 
   return (
     <section id="ask" className="section" style={{ scrollMarginTop: 64, paddingTop: 'clamp(20px, 2.5vw, 32px)', paddingBottom: 'clamp(56px, 7vw, 88px)' }}>
@@ -475,7 +475,7 @@ function Ask() {
             </div>
 
             <div>
-              {sent ? (
+              {state.succeeded ? (
                 <div style={{ padding: 36, background: 'rgba(31,138,91,0.12)', border: '1px solid rgba(31,138,91,0.4)', borderRadius: 16 }}>
                   <div style={{ display: 'inline-flex', width: 48, height: 48, borderRadius: '50%', background: 'rgba(31,138,91,0.2)', color: '#7FD3A6', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}><Icon.check s={22} /></div>
                   <h3 style={{ fontSize: 24, fontWeight: 450, letterSpacing: '-0.02em', margin: '0 0 8px', color: '#fff' }}>Thank you, {form.name.split(' ')[0]}.</h3>
@@ -484,31 +484,31 @@ function Ask() {
                   </p>
                 </div>
               ) : (
-                <form onSubmit={submit} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 16, padding: 28 }}>
+                <form onSubmit={handleSubmit} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 16, padding: 28 }}>
                   <div className="ask-row">
                     <div className="ask-field">
                       <label className="ask-label">Your name *</label>
-                      <input className="ask-input" required value={form.name} onChange={(e) => set('name', e.target.value)} placeholder="Jane Smith" />
+                      <input className="ask-input" name="name" required value={form.name} onChange={(e) => set('name', e.target.value)} placeholder="Jane Smith" />
                     </div>
                     <div className="ask-field">
                       <label className="ask-label">Firm</label>
-                      <input className="ask-input" value={form.firm} onChange={(e) => set('firm', e.target.value)} placeholder="Capital Partners" />
+                      <input className="ask-input" name="firm" value={form.firm} onChange={(e) => set('firm', e.target.value)} placeholder="Capital Partners" />
                     </div>
                   </div>
                   <div className="ask-field">
                     <label className="ask-label">Work email *</label>
-                    <input className="ask-input" type="email" required value={form.email} onChange={(e) => set('email', e.target.value)} placeholder="jane@firm.com" />
+                    <input className="ask-input" name="email" type="email" required value={form.email} onChange={(e) => set('email', e.target.value)} placeholder="jane@firm.com" />
                   </div>
                   <div className="ask-field">
                     <label className="ask-label">Anything you’d like us to cover?</label>
-                    <textarea className="ask-textarea" value={form.note} onChange={(e) => set('note', e.target.value)} placeholder="Optional — what you’d most like to understand." />
+                    <textarea className="ask-textarea" name="note" value={form.note} onChange={(e) => set('note', e.target.value)} placeholder="Optional — what you’d most like to understand." />
                   </div>
                   <label className="ask-check">
-                    <input type="checkbox" checked={form.call} onChange={(e) => set('call', e.target.checked)} />
+                    <input type="checkbox" name="book_a_call" value="yes" checked={form.call} onChange={(e) => set('call', e.target.checked)} />
                     I’d also like to book a 30-minute call with the founder
                   </label>
-                  <button type="submit" className="btn amber lg" style={{ width: '100%', justifyContent: 'center', background: 'var(--gold)', color: '#0B1220' }}>
-                    {form.call ? 'Request information & a call' : 'Request information'} <Icon.arrow s={13} />
+                  <button type="submit" disabled={state.submitting} className="btn amber lg" style={{ width: '100%', justifyContent: 'center', background: 'var(--gold)', color: '#0B1220', opacity: state.submitting ? 0.65 : 1, cursor: state.submitting ? 'default' : 'pointer' }}>
+                    {state.submitting ? 'Sending…' : (form.call ? 'Request information & a call' : 'Request information')} <Icon.arrow s={13} />
                   </button>
                   <p style={{ fontFamily: 'var(--font-mono)', fontSize: 10.5, color: 'rgba(255,255,255,0.4)', letterSpacing: '0.02em', marginTop: 12, textAlign: 'center' }}>
                     Confidential · we respond within one business day

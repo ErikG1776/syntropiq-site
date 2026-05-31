@@ -497,7 +497,7 @@ function Ask() {
                   </div>
                   <div className="ask-field">
                     <label className="ask-label">Work email *</label>
-                    <input className="ask-input" name="email" type="email" required value={form.email} onChange={(e) => set('email', e.target.value)} placeholder="jane@firm.com" />
+                    <input className="ask-input" name="_replyto" type="email" required value={form.email} onChange={(e) => set('email', e.target.value)} placeholder="jane@firm.com" />
                   </div>
                   <div className="ask-field">
                     <label className="ask-label">Anything you’d like us to cover?</label>

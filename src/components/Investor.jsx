@@ -67,7 +67,7 @@ function Hero() {
             </button>
             <h1><em>Trust-as-a-Service</em><br />for the agent<br />economy.</h1>
             <p className="hero-sub">
-              The patent-pending governance layer between every AI decision and every consequence. It scores trust, predicts drift, gates before action, and records every outcome — replayable and regulator-ready by construction.
+              The governance layer between every AI decision and every consequence. Syntropiq records what an agent did, why, and who’s accountable — scoring trust, gating before action, and producing a replayable, regulator-ready record by construction.
             </p>
             <div className="hero-cta-row">
               <span ref={ctaRef} style={{ display: 'inline-block' }}>
@@ -360,7 +360,7 @@ function Moat() {
           sub="Builders orchestrate. Eval tools score. Monitoring tools observe. Syntropiq governs — and the three reasons it wins reinforce one another."
         />
         <p className="display" data-reveal style={{ fontSize: 'clamp(22px, 2.8vw, 34px)', fontWeight: 450, letterSpacing: '-0.02em', lineHeight: 1.25, margin: '40px 0 0', maxWidth: 880, textWrap: 'balance' }}>
-          Everyone else tells you what your agents did. <em style={{ color: 'var(--gold-deep)' }}>Syntropiq decides what they’re allowed to do — before they do it.</em>
+          Everyone else tells you what your agents did after the fact. <em style={{ color: 'var(--gold-deep)' }}>Syntropiq produces the evidence — at the moment of action — that the regulator already requires.</em>
         </p>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, marginTop: 56 }} className="moat-grid">
           <style>{`

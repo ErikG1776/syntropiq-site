@@ -418,7 +418,7 @@ function Moat() {
         <div style={{ marginTop: 40, padding: '22px 26px', background: 'var(--bg-2)', border: '1px solid var(--line)', borderRadius: 14, display: 'flex', alignItems: 'center', gap: 18, flexWrap: 'wrap' }} data-reveal>
           <span style={{ color: 'var(--gold-deep)' }}><Icon.lock s={20} /></span>
           <span style={{ fontSize: 14.5, color: 'var(--ink)', flex: 1, minWidth: 280, textWrap: 'pretty' }}>
-            <strong style={{ fontWeight: 500 }}>Patent pending.</strong> <span style={{ color: 'var(--muted)' }}>The governing architecture — asymmetric trust scoring, suppression & rehabilitation, foresight prediction, and constraint-gated execution — is the subject of a pending application, PCT/US26/19117 (27 claims across 5 independent sets).</span>
+            <strong style={{ fontWeight: 500 }}>Patent pending.</strong> <span style={{ color: 'var(--muted)' }}>The governing architecture — asymmetric trust scoring, suppression & rehabilitation, foresight prediction, and constraint-gated execution — is the subject of a pending application, U.S. and International Patents Pending (27 claims across 5 independent sets).</span>
           </span>
         </div>
       </div>
@@ -465,7 +465,7 @@ function Ask() {
                 Built on a patent-pending architecture. Proven by a live engine. Aimed at a market the regulator is already mandating. Request the materials or book time with the founder — we respond within one business day.
               </p>
               <div style={{ marginTop: 28, paddingTop: 24, borderTop: '1px solid rgba(255,255,255,0.1)', display: 'flex', flexDirection: 'column', gap: 12 }}>
-                {[['Founder', 'Erik Galardi · Founder & CEO'], ['Email', 'erik@syntropiq.ai'], ['Entity', 'Delaware C-Corp · EIN 37-2201087'], ['Reference', 'Patent pending · PCT/US26/19117']].map(([k, v]) => (
+                {[['Founder', 'Erik Galardi · Founder & CEO'], ['Email', 'erik@syntropiq.ai'], ['Reference', 'U.S. and International Patents Pending']].map(([k, v]) => (
                   <div key={k} style={{ display: 'flex', justifyContent: 'space-between', gap: 16, fontSize: 13.5 }}>
                     <span style={{ fontFamily: 'var(--font-mono)', fontSize: 10.5, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)', paddingTop: 3 }}>{k}</span>
                     <span style={{ color: '#fff', textAlign: 'right' }}>{v}</span>

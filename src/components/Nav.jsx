@@ -193,7 +193,7 @@ export function Footer() {
             </div>
           </div>
           <div className="footer-bottom">
-            <span>© 2026 Syntropiq, Inc. · Delaware C-Corp</span>
+            <span>© 2026 Syntropiq, Inc.</span>
             <span>U.S. and International Patents Pending · Confidential</span>
           </div>
         </div>

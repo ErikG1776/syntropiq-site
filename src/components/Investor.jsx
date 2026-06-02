@@ -418,7 +418,7 @@ function Moat() {
         <div style={{ marginTop: 40, padding: '22px 26px', background: 'var(--bg-2)', border: '1px solid var(--line)', borderRadius: 14, display: 'flex', alignItems: 'center', gap: 18, flexWrap: 'wrap' }} data-reveal>
           <span style={{ color: 'var(--gold-deep)' }}><Icon.lock s={20} /></span>
           <span style={{ fontSize: 14.5, color: 'var(--ink)', flex: 1, minWidth: 280, textWrap: 'pretty' }}>
-            <strong style={{ fontWeight: 500 }}>Patent pending.</strong> <span style={{ color: 'var(--muted)' }}>The governing architecture — asymmetric trust scoring, suppression & rehabilitation, foresight prediction, and constraint-gated execution — is the subject of a pending application, U.S. and International Patents Pending (27 claims across 5 independent sets).</span>
+            <strong style={{ fontWeight: 500 }}>Patent pending.</strong> <span style={{ color: 'var(--muted)' }}>The governing architecture — asymmetric trust scoring, suppression & rehabilitation, foresight prediction, and constraint-gated execution — is the subject of U.S. and International Patents Pending.</span>
           </span>
         </div>
       </div>

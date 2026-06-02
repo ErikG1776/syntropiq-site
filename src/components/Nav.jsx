@@ -97,7 +97,7 @@ export function Nav() {
         @media (max-width: 880px) {
           .nav-links { display: none; }
           .nav-right .desktop-cta { display: none; }
-          .mobile-toggle { display: inline-flex; }
+          .mobile-toggle { display: inline-flex; align-items: center; justify-content: center; }
           .mobile-menu { display: block; }
           .mobile-menu.open { opacity: 1; transform: none; pointer-events: auto; }
         }
@@ -115,10 +115,10 @@ export function Nav() {
             </div>
             <div className="nav-right">
               <button className="btn ghost desktop-cta" style={{ height: 34, fontSize: 13.5 }} onClick={() => jump('ask')}>Book a call</button>
-              <button className="btn primary" style={{ height: 34, fontSize: 13.5 }} onClick={() => jump('ask')}>
+              <button className="btn primary desktop-cta" style={{ height: 34, fontSize: 13.5 }} onClick={() => jump('ask')}>
                 Request information <Icon.arrow s={12} />
               </button>
-              <button className="mobile-toggle btn ghost" style={{ height: 34, width: 34, padding: 0, display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }} onClick={() => setOpen((o) => !o)} aria-label="Menu" aria-expanded={open}>
+              <button className="mobile-toggle btn ghost" style={{ height: 34, width: 34, padding: 0 }} onClick={() => setOpen((o) => !o)} aria-label="Menu" aria-expanded={open}>
                 <Icon.menu />
               </button>
             </div>

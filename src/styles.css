@@ -152,6 +152,11 @@ input, textarea, select { font: inherit; color: inherit; }
   color: #fff;
 }
 .btn.amber:hover { background: var(--amber-2); }
+.btn.green {
+  background: var(--green);
+  color: #fff;
+}
+.btn.green:hover { background: #186E48; }
 .btn .arrow {
   display: inline-block;
   transition: transform 0.2s var(--ease-out);

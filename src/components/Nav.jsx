@@ -114,10 +114,10 @@ export function Nav() {
               ))}
             </div>
             <div className="nav-right">
-              <button className="btn ghost desktop-cta" style={{ height: 34, fontSize: 13.5 }} onClick={() => jump('ask')}>Book a call</button>
               <button className="btn primary desktop-cta" style={{ height: 34, fontSize: 13.5 }} onClick={() => jump('ask')}>
                 Request information <Icon.arrow s={12} />
               </button>
+              <button className="btn ghost desktop-cta" style={{ height: 34, fontSize: 13.5 }} onClick={() => jump('ask')}>Book a call</button>
               <button className="mobile-toggle btn ghost" style={{ height: 34, width: 34, padding: 0 }} onClick={() => setOpen((o) => !o)} aria-label="Menu" aria-expanded={open}>
                 <Icon.menu />
               </button>

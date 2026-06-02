@@ -73,7 +73,7 @@ function Hero() {
               <span ref={ctaRef} style={{ display: 'inline-block' }}>
                 <button className="btn primary lg" onClick={() => scrollToSection('ask')}>Request information <Icon.arrow /></button>
               </span>
-              <button className="btn ghost lg" onClick={() => scrollToSection('ask')}>Book a call</button>
+              <button className="btn green lg" onClick={() => scrollToSection('ask')}>Book a call</button>
             </div>
             <div className="hero-trust">
               <div className="hero-trust-item"><div className="k">Stage</div><div className="v">Seed · 2026</div></div>

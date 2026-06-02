@@ -309,6 +309,9 @@ function Market() {
           title={<>Every regulated workflow <em style={{ color: 'var(--gold-bright)' }}>needs this</em>.</>}
           sub="We sell to the ones that need it first — where the forcing function is already written into federal guidance."
         />
+        <p data-reveal style={{ fontSize: 17, color: 'rgba(255,255,255,0.68)', margin: '18px 0 0', maxWidth: 580, textWrap: 'pretty' }}>
+          These regimes require record-keeping, human oversight, and ongoing monitoring of automated decisions. Syntropiq’s append-only ledger is the record, its constraint gate is the oversight, and its foresight is the monitoring — by construction.
+        </p>
         <div className="wedge-rows">
           {verticals.map((v) => (
             <div className="wedge-row" key={v.n} data-reveal>
@@ -360,7 +363,7 @@ function Moat() {
           sub="Builders orchestrate. Eval tools score. Monitoring tools observe. Syntropiq governs — and the three reasons it wins reinforce one another."
         />
         <p className="display" data-reveal style={{ fontSize: 'clamp(22px, 2.8vw, 34px)', fontWeight: 450, letterSpacing: '-0.02em', lineHeight: 1.25, margin: '40px 0 0', maxWidth: 880, textWrap: 'balance' }}>
-          Everyone else tells you what your agents did after the fact. <em style={{ color: 'var(--gold-deep)' }}>Syntropiq produces the evidence — at the moment of action — that the regulator already requires.</em>
+          MLOps governs the lifecycle. Observability watches after execution. Compliance documents after the fact. <em style={{ color: 'var(--gold-deep)' }}>Syntropiq gates the action — before it commits.</em>
         </p>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, marginTop: 56 }} className="moat-grid">
           <style>{`

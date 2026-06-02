@@ -359,6 +359,9 @@ function Moat() {
           title={<>A position that <em>compounds</em>.</>}
           sub="Builders orchestrate. Eval tools score. Monitoring tools observe. Syntropiq governs — and the three reasons it wins reinforce one another."
         />
+        <p className="display" data-reveal style={{ fontSize: 'clamp(22px, 2.8vw, 34px)', fontWeight: 450, letterSpacing: '-0.02em', lineHeight: 1.25, margin: '40px 0 0', maxWidth: 880, textWrap: 'balance' }}>
+          Everyone else tells you what your agents did. <em style={{ color: 'var(--gold-deep)' }}>Syntropiq decides what they’re allowed to do — before they do it.</em>
+        </p>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, marginTop: 56 }} className="moat-grid">
           <style>{`
             @media (max-width: 880px) { .moat-grid { grid-template-columns: 1fr !important; } }

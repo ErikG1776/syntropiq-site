@@ -15,8 +15,8 @@ export function CmdK() {
     { group: 'Sections', label: 'Approach & roadmap', icon: 'layers', id: 'approach' },
     { group: 'Sections', label: 'Market & regulation', icon: 'graph', id: 'market' },
     { group: 'Sections', label: 'The moat', icon: 'lock', id: 'moat' },
-    { group: 'Investors', label: 'Request information', icon: 'arrow', id: 'ask' },
-    { group: 'Investors', label: 'Book a call', icon: 'arrow', id: 'ask' },
+    { group: 'Investors', label: 'Request a briefing', icon: 'arrow', id: 'ask' },
+    { group: 'Investors', label: 'Explore the control layer', icon: 'arrow', id: 'ask' },
     { group: 'Investors', label: 'Email the founder', icon: 'arrowUR', href: 'mailto:erik@syntropiq.ai' },
   ], []);
 

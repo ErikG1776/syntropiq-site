@@ -1,6 +1,6 @@
 # Syntropiq — Investor Page
 
-Single-scroll investor-facing site for Syntropiq, *Trust-as-a-Service for the agent economy*.
+Single-scroll investor-facing site for Syntropiq, enterprise AI governance infrastructure for organizations deploying AI in sensitive workflows.
 Implemented in **Vite + React** from the Claude Design handoff bundle.
 
 ## Run it

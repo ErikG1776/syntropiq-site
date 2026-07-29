@@ -115,9 +115,9 @@ export function Nav() {
             </div>
             <div className="nav-right">
               <button className="btn primary desktop-cta" style={{ height: 34, fontSize: 13.5 }} onClick={() => jump('ask')}>
-                Request information <Icon.arrow s={12} />
+                Request a briefing <Icon.arrow s={12} />
               </button>
-              <button className="btn ghost desktop-cta" style={{ height: 34, fontSize: 13.5 }} onClick={() => jump('ask')}>Book a call</button>
+              <button className="btn ghost desktop-cta" style={{ height: 34, fontSize: 13.5 }} onClick={() => jump('ask')}>Explore the control layer</button>
               <button className="mobile-toggle btn ghost" style={{ height: 34, width: 34, padding: 0 }} onClick={() => setOpen((o) => !o)} aria-label="Menu" aria-expanded={open}>
                 <Icon.menu />
               </button>
@@ -129,7 +129,7 @@ export function Nav() {
         {NAV_ANCHORS.map((a) => (
           <button key={a.id} onClick={() => jump(a.id)}>{a.label}</button>
         ))}
-        <button onClick={() => jump('ask')} style={{ color: 'var(--gold)' }}>Request information</button>
+        <button onClick={() => jump('ask')} style={{ color: 'var(--gold)' }}>Request a briefing</button>
       </div>
     </>
   );
@@ -165,7 +165,7 @@ export function Footer() {
           <div className="footer-top">
             <div>
               <Logo />
-              <p className="footer-tagline">Trust-as-a-Service for the agent economy — the patent-pending governance layer between every AI decision and every consequence.</p>
+              <p className="footer-tagline">Enterprise AI governance infrastructure for organizations deploying AI in sensitive workflows — a control point before execution, with review and audit evidence.</p>
               <div style={{ display: 'flex', gap: 8, marginTop: 22 }}>
                 <span className="pill">Patent pending</span>
                 <span className="pill amber">Seed · 2026</span>
@@ -185,8 +185,8 @@ export function Footer() {
               <div>
                 <h4>Investors</h4>
                 <ul>
-                  <li><button onClick={() => scrollToSection('ask')}>Request information</button></li>
-                  <li><button onClick={() => scrollToSection('ask')}>Book a call</button></li>
+                  <li><button onClick={() => scrollToSection('ask')}>Request a briefing</button></li>
+                  <li><button onClick={() => scrollToSection('ask')}>Explore the control layer</button></li>
                   <li><a href="mailto:erik@syntropiq.ai">erik@syntropiq.ai</a></li>
                 </ul>
               </div>

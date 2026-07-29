@@ -62,24 +62,27 @@ function Hero() {
           <div>
             <button className="hero-badge" onClick={() => scrollToSection('approach')}>
               <span className="glow" />
-              <span><strong style={{ color: 'var(--ink)', fontWeight: 500 }}>Recursa is live in production</strong> · access on request</span>
+              <span><strong style={{ color: 'var(--ink)', fontWeight: 500 }}>ENTERPRISE AI GOVERNANCE INFRASTRUCTURE</strong></span>
               <Icon.arrow s={11} />
             </button>
-            <h1><em>Trust-as-a-Service</em><br />for the agent<br />economy.</h1>
+            <h1><em>Govern AI</em><br />before it acts.</h1>
             <p className="hero-sub">
-              The governance layer between every AI decision and every consequence. Syntropiq records what an agent did, why, and who’s accountable — scoring trust, gating before action, and producing a replayable, regulator-ready record by construction.
+              Syntropiq sits between AI-generated activity and business execution — helping organizations apply policy, require review, stop unacceptable actions, and preserve a clear audit trail.
             </p>
             <div className="hero-cta-row">
               <span ref={ctaRef} style={{ display: 'inline-block' }}>
-                <button className="btn primary lg" onClick={() => scrollToSection('ask')}>Request information <Icon.arrow /></button>
+                <button className="btn primary lg" onClick={() => scrollToSection('ask')}>Request a Private Briefing <Icon.arrow /></button>
               </span>
-              <button className="btn green lg" onClick={() => scrollToSection('ask')}>Book a call</button>
+              <button className="btn green lg" onClick={() => scrollToSection('ask')}>Explore the Control Layer</button>
             </div>
+            <p style={{ fontSize: 13.5, color: 'var(--muted)', margin: '0 0 24px', maxWidth: 480, textWrap: 'pretty' }}>
+              Model- and provider-neutral · Human review built in · Patent pending
+            </p>
             <div className="hero-trust">
               <div className="hero-trust-item"><div className="k">Stage</div><div className="v">Seed · 2026</div></div>
-              <div className="hero-trust-item"><div className="k">Market · 2030</div><div className="v">$15B governance spend</div></div>
-              <div className="hero-trust-item"><div className="k">Wedge SAM</div><div className="v">$1.25B</div></div>
-              <div className="hero-trust-item"><div className="k">Demand driver</div><div className="v">Regulation, already written</div></div>
+              <div className="hero-trust-item"><div className="k">Model neutral</div><div className="v">Works across providers</div></div>
+              <div className="hero-trust-item"><div className="k">Human review</div><div className="v">Built into the flow</div></div>
+              <div className="hero-trust-item"><div className="k">Proof</div><div className="v">Patent pending</div></div>
             </div>
           </div>
           <div className="hero-visual">
@@ -110,17 +113,17 @@ function Hero() {
 // ─── Problem (kept) ──────────────────────────────────────────
 function Problem() {
   const items = [
-    { n: '01', k: 'TRUST',    t: 'No reliable signal',  d: 'Whether an agent’s output is right, wrong, or hallucinated — no one can tell at the moment of decision.' },
-    { n: '02', k: 'CONTROL',  t: 'No gate before action', d: 'Nothing sits between a proposed action and its consequence. The agent acts. Then you find out.' },
-    { n: '03', k: 'AUDIT',    t: 'No record to replay', d: '"Why did the model do that?" has no answer a regulator or a court can accept.' },
-    { n: '04', k: 'RECOVERY', t: 'No catch when drift starts', d: 'When quality drifts, nothing notices until something visibly breaks — in production, in front of a customer.' },
+    { n: '01', k: 'CONTROL', t: 'No pre-action control', d: 'AI activity can proceed before risk, compliance, or business policy is applied.' },
+    { n: '02', k: 'ESCALATION', t: 'No consistent escalation', d: 'Uncertain or sensitive actions are not always routed to the right human decision-maker.' },
+    { n: '03', k: 'EVIDENCE', t: 'No defensible record', d: 'After-the-fact logs do not necessarily show why an action was allowed, reviewed, or stopped.' },
   ];
   return (
     <section id="problem" className="section" style={{ scrollMarginTop: 64 }}>
       <style>{`
-        .problem-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 64px; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+        .problem-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 48px; }
         @media (max-width: 880px) { .problem-grid { grid-template-columns: 1fr 1fr; } }
-        .problem-cell { padding: 28px 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); display: flex; flex-direction: column; gap: 12px; background: #fff; }
+        @media (max-width: 560px) { .problem-grid { grid-template-columns: 1fr; } }
+        .problem-cell { padding: 28px 24px; border: 1px solid var(--line); border-radius: 16px; display: flex; flex-direction: column; gap: 12px; background: #fff; box-shadow: 0 20px 36px -28px rgba(11,18,32,0.18); }
         .problem-cell .num { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; color: var(--soft); }
         .problem-cell .key { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; color: var(--gold-deep); text-transform: uppercase; }
         .problem-cell .title { font-size: 19px; font-weight: 500; letter-spacing: -0.02em; line-height: 1.25; }
@@ -129,8 +132,11 @@ function Problem() {
       <div className="container">
         <SectionHeader
           eyebrow="THE PROBLEM"
-          title={<>Every enterprise is shipping AI agents.<br /><em style={{ color: 'var(--muted)', fontStyle: 'normal' }}>None of them can prove what those agents did.</em></>}
+          title={<>AI is moving from answers to actions.</>}
         />
+        <p data-reveal style={{ fontSize: 15.5, color: 'var(--muted)', lineHeight: 1.65, maxWidth: 720, marginTop: 24, textWrap: 'pretty' }}>
+          As AI systems touch approvals, records, customer communications, transactions, and other sensitive workflows, monitoring after the fact is no longer enough. Enterprises need a reliable control point before AI activity becomes a business consequence.
+        </p>
         <div className="problem-grid">
           {items.map((it, i) => (
             <div className="problem-cell" key={it.n} data-reveal data-reveal-delay={Math.min(i + 1, 5)}>
@@ -164,15 +170,14 @@ function Solution() {
           <div>
             <SectionHeader
               eyebrow="THE SOLUTION"
-              title={<>The governance layer between every <em>agent</em> and every <em>decision</em>.</>}
-              sub="Four governing primitives, working together. Hover the outcomes to see the gating decision change."
+              title={<>A governance control point before execution.</>}
+              sub="Syntropiq gives organizations a public-safe control layer for sensitive AI activity."
             />
             <div className="solution-features">
               {[
-                { n: '01', t: 'Asymmetric trust scoring', d: 'Every action gets a composite trust score. Penalties exceed rewards 2.5×. Trust is harder to earn than to lose.' },
-                { n: '02', t: 'Foresight prediction', d: 'Multi-step projection of trust over a 24h horizon. Drift caught before degradation, not after.' },
-                { n: '03', t: 'Constraint-gated execution', d: 'Three-tier pre-execution gating — allow, review, deny — across factual, recursive, and consistency constraints.' },
-                { n: '04', t: 'Append-only ledger', d: 'Cryptographically linked, deterministically replayable record of every decision. Regulator-ready by construction.' },
+                { n: '01', t: 'Apply policy', d: 'Evaluate proposed AI activity against organizational rules, risk tolerances, and workflow requirements.' },
+                { n: '02', t: 'Control execution', d: 'Allow appropriate activity, require human review, or prevent an action from proceeding.' },
+                { n: '03', t: 'Preserve evidence', d: 'Maintain a reviewable history of governance decisions for management, audit, legal, and compliance teams.' },
               ].map((f) => (
                 <div className="sf-item" key={f.n} data-reveal>
                   <span className="sf-num">{f.n}</span>
@@ -193,24 +198,24 @@ function Approach() {
   const stages = [
     {
       tag: 'LIVE TODAY', status: '● Live', statusClass: 'green',
-      title: 'Recursa',
-      sub: 'The governed inference engine.',
-      desc: 'Running in production beneath the stack — proof the governing architecture works in real execution. We keep access gated to protect the engine; available to investors on request.',
-      points: ['Trust scoring & constraint gating in code', 'Evidence, provenance & audit on every response', 'Low marginal cost per governed call'],
+      title: 'Working foundation',
+      sub: 'A governance engine that is already operating.',
+      desc: 'Syntropiq has developed a working V1 governance engine and filed a patent application directed to trust-governed AI execution.',
+      points: ['Pre-execution governance in place', 'Review and evidence capture built in', 'Designed for enterprise hardening and deployment readiness'],
     },
     {
       tag: 'SHIPPING 2026', status: 'Q2 2026', statusClass: 'gold',
-      title: 'V1 Platform',
-      sub: 'Governance, made buyable.',
-      desc: 'The same governing model, wrapped in a drag-and-drop workflow builder for regulated enterprise. Every node rubric-scored, every drift recovered, every decision logged. This is the commercial wedge.',
-      points: ['Visual workflow builder', 'Drift dashboard & replay', 'Built for the Chief Risk Officer'],
+      title: 'Design-partner deployment',
+      sub: 'Validated in sensitive workflows.',
+      desc: 'The current focus is enterprise hardening, design-partner validation, and deployment readiness across regulated and high-exposure use cases.',
+      points: ['Workflow controls for enterprise teams', 'Audit evidence for legal and compliance', 'Model- and provider-neutral deployment'],
     },
     {
       tag: 'THE HORIZON', status: '2028+', statusClass: 'ink',
-      title: 'Autonomous governance',
-      sub: 'When humans can’t review at scale.',
-      desc: 'Full pre-execution governance at population scale. Humans set the rubric; the system enforces it across billions of agent decisions. The endgame the patent was filed for.',
-      points: ['Population-level drift monitoring', 'Autonomous suppression & recovery', 'Human sets policy, system enforces'],
+      title: 'Broader governance layer',
+      sub: 'A control point that scales with enterprise AI.',
+      desc: 'The product vision is a broader governance layer for AI action across the enterprise, with human review and evidence preserved as the standard.',
+      points: ['Sensitive workflows as the wedge', 'Clear review paths for exceptions', 'Governance evidence as operating infrastructure'],
     },
   ];
   return (
@@ -218,9 +223,14 @@ function Approach() {
       <div className="container">
         <SectionHeader
           eyebrow="THE APPROACH"
-          title={<>One governing model.<br /><em>Three steps to the standard.</em></>}
-          sub="We are not raising to discover whether the governance layer works. The architecture is proven in production today. We are raising to establish it as the default."
+          title={<>Built for sensitive enterprise AI workflows.</>}
+          sub="The common characteristic is simple: AI activity where being wrong, uncontrolled, or unable to explain the decision creates meaningful exposure."
         />
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginTop: 24 }} data-reveal>
+          {['Regulated decisions', 'High-volume customer communications', 'Confidential records and documents', 'AI agents with transaction or write access', 'Legal and professional-services workflows', 'Financial, insurance, healthcare, and enterprise-risk processes'].map((item) => (
+            <span key={item} style={{ padding: '8px 12px', borderRadius: 999, border: '1px solid var(--line)', background: 'var(--bg-2)', color: 'var(--ink)', fontSize: 13.5 }}>{item}</span>
+          ))}
+        </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, marginTop: 60 }} className="approach-grid">
           <style>{`
             @media (max-width: 980px) { .approach-grid { grid-template-columns: 1fr !important; } }
@@ -255,16 +265,17 @@ function Approach() {
         </div>
 
         {/* Foresight illustration */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1.05fr 0.95fr', gap: 56, alignItems: 'center', marginTop: 80 }} className="fore-grid">
+        <div style={{ marginTop: 80, paddingTop: 40, borderTop: '1px solid var(--line)' }} data-reveal />
+        <div style={{ display: 'grid', gridTemplateColumns: '1.05fr 0.95fr', gap: 56, alignItems: 'center', marginTop: 40 }} className="fore-grid">
           <style>{`@media (max-width: 980px) { .fore-grid { grid-template-columns: 1fr !important; } }`}</style>
           <div data-reveal><TrustTrajectory /></div>
           <div>
-            <div className="eyebrow"><span className="dot" />WHY IT COMPOUNDS</div>
-            <h3 className="display" style={{ fontSize: 'clamp(26px, 3vw, 38px)', margin: '16px 0 16px' }}>The system gets <em>smarter</em> as it runs.</h3>
+            <div className="eyebrow"><span className="dot" />WHY IT MATTERS</div>
+            <h3 className="display" style={{ fontSize: 'clamp(26px, 3vw, 38px)', margin: '16px 0 16px' }}>The governance layer is strongest where the workflow is most sensitive.</h3>
             <p style={{ fontSize: 15.5, color: 'var(--muted)', lineHeight: 1.6, textWrap: 'pretty' }}>
-              Every governed decision feeds the trust ledger. Foresight projects trajectories forward and catches drift before it degrades — roughly 18 hours of lead time in the illustration above. The more it governs, the harder it is to replace.
+              Regulated decisions, high-volume customer communications, confidential records, and AI agents with transaction or write access all create the same need: a control point before execution, with evidence that can be reviewed later.
             </p>
-            <p style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: 'var(--soft)', letterSpacing: '0.04em', marginTop: 16 }}>Illustrative model output.</p>
+            <p style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: 'var(--soft)', letterSpacing: '0.04em', marginTop: 16 }}>Illustrative control-layer diagram.</p>
           </div>
         </div>
       </div>
@@ -274,12 +285,14 @@ function Approach() {
 
 // ─── Market / wedge (kept) ───────────────────────────────────
 function Market() {
-  const verticals = [
-    { n: '01', name: 'Financial services', reg: 'SR 11-7', desc: 'Validation, monitoring, and human oversight of AI decisions — now the federal expectation, not a recommendation.' },
-    { n: '02', name: 'Insurance', reg: 'NAIC Model Bulletin', desc: 'AI-system governance and disclosure obligations adopted across most U.S. states.' },
-    { n: '03', name: 'Healthcare', reg: 'HIPAA · FDA', desc: 'Decision support and clinical workflows need audit trails patient privacy can stand on.' },
-    { n: '04', name: 'Public sector', reg: 'EU AI Act · OMB M-24-10', desc: 'Risk classification, transparency, and post-deployment monitoring become mandatory line items.' },
-    { n: '05', name: 'Critical infrastructure', reg: 'NIST AI RMF', desc: 'Continuous risk management for safety-critical AI — the new federal baseline.' },
+  const roles = [
+    { n: '01', name: 'Chief Risk Officer' },
+    { n: '02', name: 'Chief AI Officer' },
+    { n: '03', name: 'General Counsel' },
+    { n: '04', name: 'CISO' },
+    { n: '05', name: 'Head of Model Risk' },
+    { n: '06', name: 'Compliance and Audit Leadership' },
+    { n: '07', name: 'Enterprise AI / Automation Leadership' },
   ];
   return (
     <section id="market" className="section" style={{ background: 'var(--ink)', color: '#E8EBF2', position: 'relative', overflow: 'hidden', scrollMarginTop: 0 }}>
@@ -305,20 +318,20 @@ function Market() {
       <div className="wedge-bg"><SpiralMark size={700} color="var(--gold-bright)" animate speed={0.3} fadeOuter /></div>
       <div className="container wedge-section" style={{ position: 'relative' }}>
         <SectionHeader
-          eyebrow="THE MARKET · WHERE THE REGULATOR ALREADY WRITES THE CHECK"
-          title={<>Every regulated workflow <em style={{ color: 'var(--gold-bright)' }}>needs this</em>.</>}
-          sub="We sell to the ones that need it first — where the forcing function is already written into federal guidance."
+          eyebrow="THE BUYERS"
+          title={<>Built for the leaders accountable when enterprise AI acts.</>}
+          sub="The buying group is broader than a single risk function — it includes the leaders who own policy, oversight, execution, and evidence."
         />
-        <p data-reveal style={{ fontSize: 17, color: 'rgba(255,255,255,0.68)', margin: '18px 0 0', maxWidth: 580, textWrap: 'pretty' }}>
-          These regimes require record-keeping, human oversight, and ongoing monitoring of automated decisions. Syntropiq’s append-only ledger is the record, its constraint gate is the oversight, and its foresight is the monitoring — by construction.
+        <p data-reveal style={{ fontSize: 17, color: 'rgba(255,255,255,0.68)', margin: '18px 0 0', maxWidth: 620, textWrap: 'pretty' }}>
+          Syntropiq is positioned for the teams responsible for ensuring AI activity is governed before it becomes a business consequence.
         </p>
         <div className="wedge-rows">
-          {verticals.map((v) => (
-            <div className="wedge-row" key={v.n} data-reveal>
-              <span className="num">{v.n}</span>
-              <span className="name">{v.name}</span>
-              <span className="reg">{v.reg}</span>
-              <span className="desc">{v.desc}</span>
+          {roles.map((r) => (
+            <div className="wedge-row" key={r.n} data-reveal>
+              <span className="num">{r.n}</span>
+              <span className="name">{r.name}</span>
+              <span className="reg">Enterprise leadership</span>
+              <span className="desc">Accountable for policy, review, escalation, and evidence in AI-enabled operations.</span>
               <span className="arrow"><Icon.arrowUR /></span>
             </div>
           ))}
@@ -343,29 +356,30 @@ function Market() {
 // ─── Moat (patent-pending + competitive) ─────────────────────
 function Moat() {
   const reasons = [
-    { t: 'Production proof', d: 'Recursa is live in production — proving the governing model works in real execution today, not on a slide.', tag: 'De-risked' },
-    { t: 'Commercial wedge', d: 'The V1 Platform packages the same model for regulated enterprise workflows, where the regulator already wrote the brief.', tag: 'Buyable' },
-    { t: 'Embedded defensibility', d: 'Patent-pending architecture, a live engine, and a workflow product reinforce each other — and get harder to replace once integrated.', tag: 'Compounding' },
+    { t: 'Before action, not only after', d: 'Governance is applied before AI activity becomes a business consequence.', tag: 'Control first' },
+    { t: 'Works with the existing AI stack', d: 'Designed to operate across models, providers, agents, and enterprise workflows.', tag: 'Stack-compatible' },
+    { t: 'Human review where risk requires it', d: 'Sensitive actions can be routed for approval rather than automatically committed.', tag: 'Reviewable' },
+    { t: 'Reviewable governance evidence', d: 'Organizations retain a clear record of how AI activity was handled.', tag: 'Auditable' },
   ];
   const rows = [
-    { feat: 'Scores live trust',            o: false, f: false, e: false },
-    { feat: 'Predicts drift before breach', o: false, f: false, e: false },
-    { feat: 'Gates before action',          o: false, f: true,  e: false },
-    { feat: 'Replayable audit chain',       o: true,  f: false, e: false },
-    { feat: 'Recovers when quality drifts', o: false, f: false, e: false },
+    { feat: 'Pre-execution governance', o: false, f: false, e: false },
+    { feat: 'Human review routing', o: false, f: false, e: false },
+    { feat: 'Reviewable audit evidence', o: false, f: true, e: false },
+    { feat: 'Works across models and providers', o: true, f: false, e: false },
+    { feat: 'Control point before business action', o: false, f: false, e: false },
   ];
   return (
     <section id="moat" className="section" style={{ scrollMarginTop: 64, paddingBottom: 'clamp(28px, 3.5vw, 48px)' }}>
       <div className="container">
         <SectionHeader
           eyebrow="THE MOAT"
-          title={<>A position that <em>compounds</em>.</>}
-          sub="Builders orchestrate. Eval tools score. Monitoring tools observe. Syntropiq governs — and the three reasons it wins reinforce one another."
+          title={<>Not another model. Not another monitoring dashboard.</>}
+          sub="Syntropiq is positioned as a control layer for enterprise AI action, not as a model wrapper or after-the-fact observability tool."
         />
-        <p className="display" data-reveal style={{ fontSize: 'clamp(22px, 2.8vw, 34px)', fontWeight: 450, letterSpacing: '-0.02em', lineHeight: 1.25, margin: '40px 0 0', maxWidth: 880, textWrap: 'balance' }}>
-          MLOps governs the lifecycle. Observability watches after execution. Compliance documents after the fact. <em style={{ color: 'var(--gold-deep)' }}>Syntropiq gates the action — before it commits.</em>
+        <p className="display" data-reveal style={{ fontSize: 'clamp(22px, 2.8vw, 34px)', fontWeight: 450, letterSpacing: '-0.02em', lineHeight: 1.25, margin: '40px 0 0', maxWidth: 900, textWrap: 'balance' }}>
+          Enterprises need a control point before execution — one that can apply policy, route exceptions, and preserve a reviewable record of what happened.
         </p>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, marginTop: 56 }} className="moat-grid">
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: 24, marginTop: 56 }} className="moat-grid">
           <style>{`
             @media (max-width: 880px) { .moat-grid { grid-template-columns: 1fr !important; } }
             .moat-card { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 28px; transition: border-color 0.2s, transform 0.3s var(--ease-out); }
@@ -424,7 +438,7 @@ function Moat() {
         <div style={{ marginTop: 40, padding: '22px 26px', background: 'var(--bg-2)', border: '1px solid var(--line)', borderRadius: 14, display: 'flex', alignItems: 'center', gap: 18, flexWrap: 'wrap' }} data-reveal>
           <span style={{ color: 'var(--gold-deep)' }}><Icon.lock s={20} /></span>
           <span style={{ fontSize: 14.5, color: 'var(--ink)', flex: 1, minWidth: 280, textWrap: 'pretty' }}>
-            <strong style={{ fontWeight: 500 }}>Patent pending.</strong> <span style={{ color: 'var(--muted)' }}>The governing architecture — asymmetric trust scoring, suppression & rehabilitation, foresight prediction, and constraint-gated execution — is the subject of U.S. and International Patents Pending.</span>
+            <strong style={{ fontWeight: 500 }}>Patent pending.</strong> <span style={{ color: 'var(--muted)' }}>The control-layer architecture is the subject of U.S. and International Patents Pending.</span>
           </span>
         </div>
       </div>
@@ -463,15 +477,15 @@ function Ask() {
               .ask-check input { accent-color: var(--gold-bright); width: 15px; height: 15px; }
             `}</style>
             <div>
-              <div className="eyebrow" style={{ color: 'rgba(255,255,255,0.6)' }}><span className="dot" style={{ background: 'var(--gold-bright)' }} />FOR INVESTORS</div>
+              <div className="eyebrow" style={{ color: 'rgba(255,255,255,0.6)' }}><span className="dot" style={{ background: 'var(--gold-bright)' }} />FOR ENTERPRISE TEAMS</div>
               <h2 className="display" style={{ fontSize: 'clamp(32px, 4.4vw, 56px)', color: '#fff', margin: '18px 0 18px' }}>
-                We’re raising a <em style={{ color: 'var(--gold-bright)' }}>seed round</em>.
+                A working foundation for enterprise AI governance.
               </h2>
-              <p style={{ fontSize: 16.5, color: 'rgba(255,255,255,0.72)', lineHeight: 1.6, maxWidth: 460, textWrap: 'pretty' }}>
-                Built on a patent-pending architecture. Proven by a live engine. Aimed at a market the regulator is already mandating. Request the materials or book time with the founder — we respond within one business day.
+              <p style={{ fontSize: 16.5, color: 'rgba(255,255,255,0.72)', lineHeight: 1.6, maxWidth: 480, textWrap: 'pretty' }}>
+                Syntropiq has developed a working V1 governance engine and is focused on enterprise hardening, design-partner validation, and deployment readiness. Request a confidential product briefing for detailed architecture, validation materials, and IP alignment.
               </p>
               <div style={{ marginTop: 28, paddingTop: 24, borderTop: '1px solid rgba(255,255,255,0.1)', display: 'flex', flexDirection: 'column', gap: 12 }}>
-                {[['Founder', 'Erik Galardi · Founder & CEO'], ['Email', 'erik@syntropiq.ai'], ['Reference', 'U.S. and International Patents Pending']].map(([k, v]) => (
+                {[['Contact', 'Erik Galardi · Founder & CEO'], ['Email', 'erik@syntropiq.ai'], ['Reference', 'U.S. and International Patents Pending']].map(([k, v]) => (
                   <div key={k} style={{ display: 'flex', justifyContent: 'space-between', gap: 16, fontSize: 13.5 }}>
                     <span style={{ fontFamily: 'var(--font-mono)', fontSize: 10.5, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)', paddingTop: 3 }}>{k}</span>
                     <span style={{ color: '#fff', textAlign: 'right' }}>{v}</span>
@@ -514,7 +528,7 @@ function Ask() {
                     I’d also like to book a 30-minute call with the founder
                   </label>
                   <button type="submit" disabled={state.submitting} className="btn amber lg" style={{ width: '100%', justifyContent: 'center', background: 'var(--gold)', color: '#0B1220', opacity: state.submitting ? 0.65 : 1, cursor: state.submitting ? 'default' : 'pointer' }}>
-                    {state.submitting ? 'Sending…' : (form.call ? 'Request information & a call' : 'Request information')} <Icon.arrow s={13} />
+                    {state.submitting ? 'Sending…' : 'Request a Confidential Product Briefing'} <Icon.arrow s={13} />
                   </button>
                   <p style={{ fontFamily: 'var(--font-mono)', fontSize: 10.5, color: 'rgba(255,255,255,0.4)', letterSpacing: '0.02em', marginTop: 12, textAlign: 'center' }}>
                     Confidential · we respond within one business day

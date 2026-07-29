@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Syntropiq — Trust-as-a-Service investor page",
+  "description": "Syntropiq — Enterprise AI governance infrastructure",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

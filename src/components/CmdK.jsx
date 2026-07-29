@@ -17,7 +17,7 @@ export function CmdK() {
     { group: 'Sections', label: 'The moat', icon: 'lock', id: 'moat' },
     { group: 'Investors', label: 'Request a briefing', icon: 'arrow', id: 'ask' },
     { group: 'Investors', label: 'Explore the control layer', icon: 'arrow', id: 'ask' },
-    { group: 'Investors', label: 'Email the founder', icon: 'arrowUR', href: 'mailto:erik@syntropiq.ai' },
+    { group: 'Investors', label: 'Email Syntropiq', icon: 'arrowUR', href: 'mailto:contact@syntropiq.ai' },
   ], []);
 
   const filtered = useMemo(() => {

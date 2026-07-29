@@ -485,7 +485,7 @@ function Ask() {
                 Syntropiq has developed a working V1 governance engine and is focused on enterprise hardening, design-partner validation, and deployment readiness. Request a confidential product briefing for detailed architecture, validation materials, and IP alignment.
               </p>
               <div style={{ marginTop: 28, paddingTop: 24, borderTop: '1px solid rgba(255,255,255,0.1)', display: 'flex', flexDirection: 'column', gap: 12 }}>
-                {[['Contact', 'Erik Galardi · Founder & CEO'], ['Email', 'erik@syntropiq.ai'], ['Reference', 'U.S. and International Patents Pending']].map(([k, v]) => (
+                {[['Contact', 'Confidential briefing · we respond within one business day'], ['Email', 'investors@syntropiq.ai'], ['Reference', 'U.S. and International Patents Pending']].map(([k, v]) => (
                   <div key={k} style={{ display: 'flex', justifyContent: 'space-between', gap: 16, fontSize: 13.5 }}>
                     <span style={{ fontFamily: 'var(--font-mono)', fontSize: 10.5, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)', paddingTop: 3 }}>{k}</span>
                     <span style={{ color: '#fff', textAlign: 'right' }}>{v}</span>

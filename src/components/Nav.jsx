@@ -187,7 +187,7 @@ export function Footer() {
                 <ul>
                   <li><button onClick={() => scrollToSection('ask')}>Request a briefing</button></li>
                   <li><button onClick={() => scrollToSection('ask')}>Explore the control layer</button></li>
-                  <li><a href="mailto:erik@syntropiq.ai">erik@syntropiq.ai</a></li>
+                  <li><a href="mailto:contact@syntropiq.ai">contact@syntropiq.ai</a></li>
                 </ul>
               </div>
             </div>

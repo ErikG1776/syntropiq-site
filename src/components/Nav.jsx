@@ -11,10 +11,7 @@ export function Logo({ light = false, size = 22 }) {
   const ink = light ? '#fff' : 'var(--ink)';
   return (
     <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6, color: ink }}>
-      <SpiralMarkSVG size={size} color="var(--gold)" count={89} />
-      <span style={{ fontWeight: 600, fontSize: 17.5, letterSpacing: '-0.03em' }}>
-        syntrop<span style={{ color: 'var(--gold)' }}>iq</span>
-      </span>
+      <img src="/syntropiq-logo-lockup-transparent.png" alt="Syntropiq" style={{ height: 32, width: 'auto' }} />
     </span>
   );
 }

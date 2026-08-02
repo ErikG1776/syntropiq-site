@@ -455,7 +455,7 @@ function Ask() {
   return (
     <section id="ask" className="section" style={{ scrollMarginTop: 64, paddingTop: 'clamp(20px, 2.5vw, 32px)', paddingBottom: 'clamp(56px, 7vw, 88px)' }}>
       <div className="container">
-        <div style={{ background: 'var(--ink)', color: '#fff', borderRadius: 24, padding: 'clamp(36px, 5vw, 72px)', position: 'relative', overflow: 'hidden' }}>
+        <div className="ask-card" style={{ background: 'var(--ink)', color: '#fff', borderRadius: 24, padding: 'clamp(36px, 5vw, 72px)', position: 'relative', overflow: 'hidden' }}>
           <div style={{ position: 'absolute', left: -140, bottom: -120, opacity: 0.1, pointerEvents: 'none' }}>
             <SpiralMark size={620} color="var(--gold-bright)" animate speed={0.4} fadeOuter />
           </div>
@@ -475,6 +475,31 @@ function Ask() {
               @media (max-width: 560px) { .ask-row { grid-template-columns: 1fr; } }
               .ask-check { display: flex; align-items: center; gap: 10px; font-size: 13.5px; color: rgba(255,255,255,0.8); cursor: pointer; margin: 6px 0 16px; }
               .ask-check input { accent-color: var(--gold-bright); width: 15px; height: 15px; }
+
+              /* ── Mobile (< 768px) ──────────────────────────────────────
+                 Root cause of the overflow: .ask-submit inherits
+                 white-space: nowrap from .btn, giving it a 317px min-content
+                 width. As a grid item that min-content propagated up through
+                 the 1fr column and forced .ask-grid to 375px inside a card
+                 that only had ~263px of content box — pushing every child
+                 off the right edge (hidden by body{overflow-x:hidden}).
+                 min-width:0 + a wrappable button is what actually fixes it. */
+              @media (max-width: 767px) {
+                #ask .container { padding-left: 16px; padding-right: 16px; }
+                .ask-card { padding: 28px 20px !important; border-radius: 18px; }
+                .ask-grid { gap: 28px; }
+                .ask-grid > * { min-width: 0; }
+                .ask-form { padding: 20px 16px !important; }
+                .ask-input, .ask-textarea { width: 100%; max-width: 100%; min-width: 0; }
+                .ask-submit {
+                  white-space: normal; height: auto; min-height: 44px;
+                  padding: 12px 18px; line-height: 1.3; text-align: center;
+                }
+                .ask-check { align-items: flex-start; }
+                .ask-check input { flex-shrink: 0; margin-top: 2px; }
+                .ask-meta-row { flex-direction: column; gap: 3px !important; }
+                .ask-meta-row > span:last-child { text-align: left !important; }
+              }
             `}</style>
             <div>
               <div className="eyebrow" style={{ color: 'rgba(255,255,255,0.6)' }}><span className="dot" style={{ background: 'var(--gold-bright)' }} />FOR ENTERPRISE TEAMS</div>
@@ -486,7 +511,7 @@ function Ask() {
               </p>
               <div style={{ marginTop: 28, paddingTop: 24, borderTop: '1px solid rgba(255,255,255,0.1)', display: 'flex', flexDirection: 'column', gap: 12 }}>
                 {[['Contact', 'Confidential briefing · we respond within one business day'], ['Email', <a href="mailto:investors@syntropiq.ai" style={{ color: '#fff', textDecoration: 'none' }}>investors@syntropiq.ai</a>], ['Reference', 'U.S. and International Patents Pending']].map(([k, v]) => (
-                  <div key={k} style={{ display: 'flex', justifyContent: 'space-between', gap: 16, fontSize: 13.5 }}>
+                  <div key={k} className="ask-meta-row" style={{ display: 'flex', justifyContent: 'space-between', gap: 16, fontSize: 13.5 }}>
                     <span style={{ fontFamily: 'var(--font-mono)', fontSize: 10.5, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)', paddingTop: 3 }}>{k}</span>
                     <span style={{ color: '#fff', textAlign: 'right' }}>{v}</span>
                   </div>
@@ -504,7 +529,7 @@ function Ask() {
                   </p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 16, padding: 28 }}>
+                <form onSubmit={handleSubmit} className="ask-form" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 16, padding: 28 }}>
                   <div className="ask-row">
                     <div className="ask-field">
                       <label className="ask-label">Your name *</label>
@@ -527,7 +552,7 @@ function Ask() {
                     <input type="checkbox" name="book_a_call" value="yes" checked={form.call} onChange={(e) => set('call', e.target.checked)} />
                     I’d also like to book a 30-minute call with the founder
                   </label>
-                  <button type="submit" disabled={state.submitting} className="btn amber lg" style={{ width: '100%', justifyContent: 'center', background: 'var(--gold)', color: '#0B1220', opacity: state.submitting ? 0.65 : 1, cursor: state.submitting ? 'default' : 'pointer' }}>
+                  <button type="submit" disabled={state.submitting} className="btn amber lg ask-submit" style={{ width: '100%', justifyContent: 'center', background: 'var(--gold)', color: '#0B1220', opacity: state.submitting ? 0.65 : 1, cursor: state.submitting ? 'default' : 'pointer' }}>
                     {state.submitting ? 'Sending…' : 'Request a Confidential Product Briefing'} <Icon.arrow s={13} />
                   </button>
                   <p style={{ fontFamily: 'var(--font-mono)', fontSize: 10.5, color: 'rgba(255,255,255,0.4)', letterSpacing: '0.02em', marginTop: 12, textAlign: 'center' }}>
